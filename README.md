@@ -1,3 +1,5 @@
 # Portfolio — Kayra Bulbul
+This is my portfolio website built on React using TypeScript.
 
-This is my portfolio website built on React using TypeScript. Not much more too see tbh
+## Planned Additions
+- A "view more" projects page that has the complete list and probably demo screenshots or gifs of the project
