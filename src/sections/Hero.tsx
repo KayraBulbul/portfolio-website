@@ -30,8 +30,8 @@ export default function Hero() {
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
           Computer Science student at RMIT University. I care about the parts of
-          software you don't see. Things like clean schemas, reliable pipelines,
-          and APIs that don't surprise you.
+          software you don't see. I like to create clean schemas, reliable
+          pipelines and APIs.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">

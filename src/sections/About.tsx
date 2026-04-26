@@ -17,29 +17,27 @@ export default function About() {
               <span className="text-accent font-medium">RMIT University</span>{" "}
               in Melbourne, studying Computer Science with minors in Enterprise
               Systems Development and Data Science. I'm drawn to the systems
-              side of software, backends, data infrastructure, and the plumbing
+              side of software, backends, data infrastructure and the plumbing
               that makes products feel reliable.
             </p>
             <p>
-              Most of my recent work lives at the intersection of{" "}
-              <span className="text-accent font-medium">
-                backend engineering
-              </span>{" "}
-              and{" "}
+              Most of my recent work has been in{" "}
+              <span className="text-accent font-medium">backend</span> and{" "}
               <span className="text-accent font-medium">data engineering</span>,
               though I have also been dabbling in{" "}
               <span className="text-accent font-medium">
                 fullstack engineering
               </span>
-              . Building ETL/ELT pipelines, modelling warehouses on SQL Server
-              and PostgreSQL, and wiring up Node/Express APIs with TypeScript. I
-              also enjoy lower-level work, I've been writing C and C++ to keep
-              myself honest about what's actually happening underneath.
+              . I've recently been Building ETL/ELT pipelines, modelling data
+              warehouses on SQL Server & PostgreSQL, and wiring up Node/Express
+              APIs with TypeScript. I also enjoy low level work, I've been
+              writing C and C++ to learn about what's actually happening under
+              the hood.
             </p>
             <p>
-              Outside of class, I'm usually picking apart a new dataset,
-              tinkering with my Hyprland setup (I use arch btw), or playing
-              around with RAG and other applied-ML side projects.
+              Outside of class, If I'm not tinkering (breaking) with my Hyprland
+              setup (I use arch btw), I'll usually be playing video games or
+              watching movies.
             </p>
           </div>
 
