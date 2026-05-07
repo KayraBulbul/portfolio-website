@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: "CLI Pokedex",
     description:
       "A command-line Pokedex built in TypeScript and Node.js. Explore the Pokemon world, catch Pokemon, and inspect your collection all from the terminal.",
-    stack: ["TypeScript", "Node.js"],
+    stack: ["TypeScript", "Node.js", "PokeAPI"],
     repo: "https://github.com/KayraBulbul/cli-pokedex",
   },
 ];
