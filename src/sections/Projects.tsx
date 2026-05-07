@@ -45,11 +45,11 @@ const projects: Project[] = [
     repo: "https://github.com/KayraBulbul/asteroid-game",
   },
   {
-    title: "Clicker Game",
+    title: "CLI Pokedex",
     description:
-      "Browser clicker game, small but a fun exercise in DOM events, persistence, and state progression.",
-    stack: ["JavaScript", "HTML", "CSS"],
-    repo: "https://github.com/KayraBulbul/Clicker-Game",
+      "A command-line Pokedex built in TypeScript and Node.js. Explore the Pokemon world, catch Pokemon, and inspect your collection all from the terminal.",
+    stack: ["TypeScript", "Node"],
+    repo: "https://github.com/KayraBulbul/cli-pokedex",
   },
 ];
 
