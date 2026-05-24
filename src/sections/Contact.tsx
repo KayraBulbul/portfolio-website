@@ -4,17 +4,22 @@ const links: Link[] = [
   {
     label: "Email",
     href: "mailto:kayrabuldotdev@gmail.com",
-    handle: "kayra19206@gmail.com",
+    handle: "kayrabuldotdev@gmail.com",
   },
   {
     label: "GitHub",
     href: "https://github.com/KayraBulbul",
-    handle: "github.com/KayraBulbul",
+    handle: "KayraBulbul",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/kayra-bulbul-62834619a/",
-    handle: "linkedin.com/in/kayra-bulbul",
+    handle: "Kayra Bulbul",
+  },
+  {
+    label: "X",
+    href: "https://x.com/kayrabulbuldev",
+    handle: "@kayrabulbuldev",
   },
   {
     label: "Resume",
