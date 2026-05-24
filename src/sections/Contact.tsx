@@ -3,7 +3,7 @@ type Link = { label: string; href: string; handle: string };
 const links: Link[] = [
   {
     label: "Email",
-    href: "mailto:kayra19206@gmail.com",
+    href: "mailto:kayrabuldotdev@gmail.com",
     handle: "kayra19206@gmail.com",
   },
   {
