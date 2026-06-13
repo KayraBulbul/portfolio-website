@@ -3,7 +3,16 @@ type Group = { title: string; items: string[] };
 const groups: Group[] = [
   {
     title: "Languages",
-    items: ["Python", "Java", "TypeScript", "JavaScript", "C", "C++", "SQL"],
+    items: [
+      "Python",
+      "Java",
+      "TypeScript",
+      "JavaScript",
+      "Golang",
+      "C",
+      "C++",
+      "SQL",
+    ],
   },
   {
     title: "Backend & Web",

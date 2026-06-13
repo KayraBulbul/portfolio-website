@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#top", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#devlogs", label: "Devlogs" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -20,10 +22,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 backdrop-blur transition-colors ${scrolled
+      className={`sticky top-0 z-40 backdrop-blur transition-colors ${
+        scrolled
           ? "bg-white/80 border-b border-zinc-200 dark:bg-zinc-950/80 dark:border-zinc-800"
           : "bg-transparent border-b border-transparent"
-        }`}
+      }`}
     >
       <nav className="container-narrow flex h-16 items-center justify-between">
         <a

@@ -1,21 +1,21 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Projects from "./sections/Projects";
-import Skills from "./sections/Skills";
-import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Devlog from "./pages/Devlog";
+import DevlogPost from "./pages/DevlogPost";
 
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/devlog" element={<Devlog />} />
+          <Route path="/devlog/:slug" element={<DevlogPost />} />
+        </Routes>
       </main>
       <Footer />
     </div>
