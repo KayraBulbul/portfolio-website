@@ -6,7 +6,7 @@ const allPostFiles = import.meta.glob<string>("../content/posts/*.md", {
 
 const allPosts = Object.entries(allPostFiles);
 
-type PostMetadata = {
+export type PostMetadata = {
   title: string;
   date: string;
   description: string;
@@ -14,13 +14,13 @@ type PostMetadata = {
   published: boolean;
 };
 
-type Post = {
+export type Post = {
   slug: string;
   metadata: PostMetadata;
   content: string;
 };
 
-export function getAllPosts(): Post[] {
+function parsePosts(): Post[] {
   let posts: Post[] = [];
 
   allPosts.forEach(([path, rawMarkdown]) => {
@@ -73,4 +73,19 @@ export function getAllPosts(): Post[] {
   filterdPosts.sort((a, b) => b.metadata.date.localeCompare(a.metadata.date));
 
   return filterdPosts;
+}
+
+const posts = parsePosts();
+
+export function getAllPosts() {
+  return posts;
+}
+
+export function getPostBySlug(slug: string): Post | undefined {
+  for (let post of posts) {
+    if (post.slug === slug) {
+      return post;
+    }
+  }
+  return undefined;
 }
