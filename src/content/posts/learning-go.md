@@ -2,7 +2,7 @@
 title: Learning Go
 date: 2026-06-14
 description: Talking about my experience picking up Go
-tags: go, bootdev
+tags: go, learning
 published: true
 ---
 
@@ -12,7 +12,7 @@ So I've continued learning Go on [Boot.dev](https://www.boot.dev) and it's hones
 
 I'll probably make a full "things I like/things I don't like" devlog about Go when I'm finished with this course, sounds like fun and probably will help in cementing the concepts in my head by writing them down somewhere.
 
-### What's next?
+### What's Next?
 
 Well obviously going to finish this "Learn Go" course, then I'm not really sure. They do have the "Learn HTTP Client" course next which I will do eventually, but I've done the TypeScript version of it already so I don't know if I'll end up finding that boring or not. Either way I will have to do it to learn how things like sending requests work in Go. I'll probably skip their pokedex Go project for now since I've also done the TypeScript version of that and move straight to the blog aggregator project.
 
