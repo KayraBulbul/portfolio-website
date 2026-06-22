@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -29,25 +30,25 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-narrow flex h-16 items-center justify-between">
-        <a
-          href="#top"
+        <Link
+          to="/#top"
           className="font-mono text-sm font-semibold tracking-tight"
         >
           <span className="text-accent">kayrabulbul</span>
           <span className="text-zinc-500">.</span>
           <span>dev</span>
-        </a>
+        </Link>
 
         <div className="flex items-center gap-1 sm:gap-2">
           <ul className="hidden sm:flex items-center gap-1">
             {links.map((l) => (
               <li key={l.href}>
-                <a
-                  href={l.href}
+                <Link
+                  to={l.href}
                   className="rounded-md px-3 py-2 text-sm text-zinc-600 transition-colors hover:text-accent dark:text-zinc-300"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
