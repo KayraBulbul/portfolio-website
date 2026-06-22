@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { getPostBySlug } from "../lib/posts";
 import Markdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 
 const markdownComponents = {
   h1: ({ children }: { children?: React.ReactNode }) => (
@@ -71,7 +73,8 @@ const markdownComponents = {
     className?: string;
     children?: React.ReactNode;
   }) => {
-    const isBlockCode = className?.startsWith("language-");
+    const isBlockCode =
+      className?.includes("language-") || className?.includes("hljs");
 
     return (
       <code
@@ -172,7 +175,14 @@ export default function DevlogPost() {
             </header>
 
             <div className="mt-10 max-w-3xl border-t border-zinc-200 pt-10 dark:border-zinc-800">
-              <Markdown components={markdownComponents}>{post.content}</Markdown>
+              <Markdown
+                components={markdownComponents}
+                rehypePlugins={[
+                  [rehypeHighlight, { detect: false, ignoreMissing: true }],
+                ]}
+              >
+                {post.content}
+              </Markdown>
             </div>
           </article>
         )
