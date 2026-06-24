@@ -2,7 +2,7 @@
 title: Blog Aggregator Project Devlog 1
 date: 2026-06-22
 description: First devlog to my most recent go project, a blog aggregator that receives updates from websites without manually visiting them.
-tags: go, postgreSQL, goose, SQLC
+tags: go, postgres, goose, sqlc
 published: true
 ---
 
