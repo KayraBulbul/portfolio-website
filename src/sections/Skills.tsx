@@ -8,7 +8,7 @@ const groups: Group[] = [
       "Java",
       "TypeScript",
       "JavaScript",
-      "Golang",
+      "Go",
       "C",
       "C++",
       "SQL",
