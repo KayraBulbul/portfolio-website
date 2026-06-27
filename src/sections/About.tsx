@@ -48,7 +48,9 @@ export default function About() {
               <p className="mt-2 text-sm">
                 <span className="font-medium">RMIT University</span>
                 <br />
-                <span className="text-zinc-500">B.Sc. Computer Science</span>
+                <span className="text-zinc-500">
+                  Bachelor of Computer Science
+                </span>
                 <br />
                 <span className="text-zinc-500">
                   Minors: Enterprise Systems Development, Data Science
