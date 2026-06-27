@@ -35,9 +35,8 @@ export default function About() {
               the hood.
             </p>
             <p>
-              Outside of class, If I'm not tinkering (breaking) with my Hyprland
-              setup (I use arch btw), I'll usually be playing video games or
-              watching movies.
+              Outside of class, If I'm not breaking my Hyprland setup (I use
+              arch btw), I'll usually be playing video games or watching movies.
             </p>
           </div>
 
