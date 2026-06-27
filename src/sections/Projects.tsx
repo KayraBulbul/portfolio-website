@@ -34,15 +34,15 @@ const projects: Project[] = [
     title: "Maze Solver",
     description:
       "Visual pathfinding playground. Generates mazes and animates DFS-based solving in a Tk canvas, with a clean separation between model and renderer.",
-    stack: ["Python", "Tkinter", "Algorithms"],
+    stack: ["Python", "Tkinter", "Graph Search"],
     repo: "https://github.com/KayraBulbul/maze-solver",
   },
   {
-    title: "Asteroid Game",
+    title: "Gator",
     description:
-      "Arcade-style asteroids clone exploring object-oriented game loops, collision detection, and basic physics.",
-    stack: ["Python", "Pygame", "OOP"],
-    repo: "https://github.com/KayraBulbul/asteroid-game",
+      "Gator is a command-line RSS/blog aggregator written in Go. It lets users register, add RSS feeds, follow feeds, fetch posts from those feeds, and browse recent posts from a PostgreSQL database.",
+    stack: ["Go", "PostgreSQL", "Goose", "SQLC"],
+    repo: "https://github.com/KayraBulbul/gator",
   },
   {
     title: "CLI Pokedex",
