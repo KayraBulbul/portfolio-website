@@ -8,7 +8,7 @@ published: true
 
 ## My Next Project
 
-It's been a minute since I've made a devlog, honestly because I haven't really been developing that I'd consider that interesting as of late. However I've decided on my next project - A full stack webapp for the Minecraft server I play on with my mates!
+It's been a minute since I've made a devlog, honestly because I haven't really been developing anything that I'd consider that interesting as of late. However I've decided on my next project - A full stack webapp for the Minecraft server I play on with my mates!
 
 I had this random thought today that I wanted to make a website for my Minecraft server where my mates can share interesting stories and upload screenshots, while also just providing general information about the server such as if it's online, how many players are currently online, the world map etc.
 
