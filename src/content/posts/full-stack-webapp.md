@@ -1,7 +1,7 @@
 ---
 title: My Next Project - A full stack webapp for my Minecraft server!
 date: 2026-07-29
-description: I'm hard at working building my next project, a full stack webapp for the minecraft server my friends and I play on.
+description: I'm hard at work building my next project, a full stack webapp for the minecraft server my friends and I play on.
 tags: react, typescript, go, full stack
 published: true
 ---
