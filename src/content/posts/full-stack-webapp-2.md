@@ -2,7 +2,7 @@
 title: Full Stack Webapp Devlog 2
 date: 2026-08-01
 description: My experience so far from phase 0-2 of my 9 phase project.
-tags: portfolio, devlog
+tags: react, typescript, go, full stack
 published: true
 ---
 
