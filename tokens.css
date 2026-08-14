@@ -1,0 +1,103 @@
+/* Hallmark · tokens · design-system: design.md · studied-DNA: press-01 · accent: orange */
+:root {
+  color-scheme: light;
+
+  --color-paper: oklch(93% 0.02 70);
+  --color-paper-2: oklch(89% 0.024 68);
+  --color-paper-3: oklch(86% 0.026 66);
+  --color-ink: oklch(17% 0.024 32);
+  --color-ink-2: oklch(28% 0.02 35);
+  --color-neutral: oklch(36% 0.018 38);
+  --color-muted: oklch(46% 0.018 40);
+  --color-rule: oklch(74% 0.024 60);
+  --color-rule-2: oklch(60% 0.024 56);
+  --color-accent: oklch(43% 0.17 50);
+  --color-accent-hover: oklch(37% 0.18 48);
+  --color-accent-contrast: oklch(78% 0.14 64);
+  --color-accent-ink: oklch(97% 0.012 70);
+  --color-focus: oklch(48% 0.19 50);
+  --color-shadow: oklch(17% 0.024 32 / 0.18);
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --weight-body: 400;
+  --weight-display: 750;
+  --tracking-display: -0.035em;
+  --tracking-tight: -0.018em;
+  --tracking-label: 0.14em;
+  --tracking-micro: 0.2em;
+  --leading-display: 0.94;
+  --leading-heading: 1.02;
+  --leading-body: 1.62;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 2.25rem;
+  --text-2xl: 3.75rem;
+  --text-display-s: clamp(2.75rem, 7vw, 5.25rem);
+  --text-display: clamp(3.25rem, 9vw, 7.5rem);
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6.5rem;
+  --space-4xl: 10rem;
+  --space-5xl: 13rem;
+
+  --page-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --page-max: 78rem;
+  --rail-width: 8.5rem;
+  --content-measure: 65ch;
+
+  --rule-hair: 1px;
+  --rule-fine: 2px;
+  --radius-card: 0;
+  --radius-pill: 0;
+  --radius-input: 0;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 560ms;
+
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --color-paper: oklch(16% 0.006 60);
+  --color-paper-2: oklch(20% 0.007 60);
+  --color-paper-3: oklch(25% 0.008 60);
+  --color-ink: oklch(95% 0.01 60);
+  --color-ink-2: oklch(86% 0.01 60);
+  --color-neutral: oklch(74% 0.009 60);
+  --color-muted: oklch(65% 0.009 60);
+  --color-rule: oklch(34% 0.008 60);
+  --color-rule-2: oklch(46% 0.009 60);
+  --color-accent: oklch(72% 0.16 60);
+  --color-accent-hover: oklch(78% 0.15 65);
+  --color-accent-contrast: oklch(43% 0.17 50);
+  --color-accent-ink: oklch(17% 0.024 32);
+  --color-focus: oklch(78% 0.15 65);
+  --color-shadow: oklch(5% 0.006 60 / 0.38);
+  --weight-body: 350;
+}

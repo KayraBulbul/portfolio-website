@@ -6,63 +6,51 @@ import "highlight.js/styles/github-dark.css";
 
 const markdownComponents = {
   h1: ({ children }: { children?: React.ReactNode }) => (
-    <h1 className="text-3xl font-semibold tracking-tight first:mt-0 sm:text-5xl">
-      {children}
-    </h1>
+    <h1 className="prose-h1">{children}</h1>
   ),
   h2: ({ children }: { children?: React.ReactNode }) => (
-    <h2 className="mt-12 text-2xl font-semibold tracking-tight first:mt-0 sm:text-3xl">
-      {children}
-    </h2>
+    <h2 className="prose-h2">{children}</h2>
   ),
   h3: ({ children }: { children?: React.ReactNode }) => (
-    <h3 className="mt-10 text-xl font-semibold tracking-tight first:mt-0">
-      {children}
-    </h3>
+    <h3 className="prose-h3">{children}</h3>
   ),
   p: ({ children }: { children?: React.ReactNode }) => (
-    <p className="mt-5 leading-relaxed text-zinc-700 first:mt-0 dark:text-zinc-300">
-      {children}
-    </p>
+    <p className="prose-p">{children}</p>
   ),
   a: ({ href, children }: { href?: string; children?: React.ReactNode }) => (
     <a
       href={href}
       target={href?.startsWith("http") ? "_blank" : undefined}
       rel={href?.startsWith("http") ? "noreferrer" : undefined}
-      className="link-underline text-accent"
+      className="prose-link"
     >
       {children}
     </a>
   ),
   ul: ({ children }: { children?: React.ReactNode }) => (
-    <ul className="mt-5 list-disc space-y-2 pl-5 marker:text-accent first:mt-0">
+    <ul className="prose-list prose-list--unordered">
       {children}
     </ul>
   ),
   ol: ({ children }: { children?: React.ReactNode }) => (
-    <ol className="mt-5 list-decimal space-y-2 pl-5 marker:text-accent first:mt-0">
+    <ol className="prose-list prose-list--ordered">
       {children}
     </ol>
   ),
   li: ({ children }: { children?: React.ReactNode }) => (
-    <li className="leading-relaxed text-zinc-700 dark:text-zinc-300">
-      {children}
-    </li>
+    <li>{children}</li>
   ),
   blockquote: ({ children }: { children?: React.ReactNode }) => (
-    <blockquote className="mt-6 border-l-2 border-accent pl-5 text-zinc-600 first:mt-0 dark:text-zinc-400">
+    <blockquote className="prose-quote">
       {children}
     </blockquote>
   ),
-  hr: () => <hr className="my-10 border-zinc-200 dark:border-zinc-800" />,
+  hr: () => <hr className="prose-rule" />,
   strong: ({ children }: { children?: React.ReactNode }) => (
-    <strong className="font-semibold text-zinc-900 dark:text-zinc-100">
-      {children}
-    </strong>
+    <strong>{children}</strong>
   ),
   pre: ({ children }: { children?: React.ReactNode }) => (
-    <pre className="mt-6 overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm leading-relaxed first:mt-0 dark:border-zinc-800 dark:bg-zinc-900/60">
+    <pre className="prose-code-block">
       {children}
     </pre>
   ),
@@ -80,8 +68,8 @@ const markdownComponents = {
       <code
         className={
           isBlockCode
-            ? "font-mono text-zinc-800 dark:text-zinc-100"
-            : "rounded border border-zinc-200 bg-zinc-100 px-1.5 py-0.5 font-mono text-[0.9em] text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
+            ? "prose-code"
+            : "prose-code prose-code--inline"
         }
       >
         {children}
@@ -95,14 +83,12 @@ export default function DevlogPost() {
 
   if (slug === undefined) {
     return (
-      <section className="container-narrow py-20 sm:py-24">
-        <p className="section-heading mb-4">/ devlog</p>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          Devlog not found
-        </h1>
+      <section className="folio-container missing-page">
+        <p className="plate-label">Devlog</p>
+        <h1>Devlog not found</h1>
         <Link
           to="/devlog"
-          className="link-underline mt-6 text-sm text-zinc-600 dark:text-zinc-400"
+          className="action-link"
         >
           Back to all devlogs
         </Link>
@@ -115,27 +101,25 @@ export default function DevlogPost() {
   return (
     <section>
       {!post ? (
-        <div className="container-narrow py-20 sm:py-24">
-          <p className="section-heading mb-4">/ devlog</p>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Devlog not found
-          </h1>
+        <div className="folio-container missing-page">
+          <p className="plate-label">Devlog</p>
+          <h1>Devlog not found</h1>
           <Link
             to="/devlog"
-            className="link-underline mt-6 text-sm text-zinc-600 dark:text-zinc-400"
+            className="action-link"
           >
             Back to all devlogs
           </Link>
         </div>
       ) : (
         post && (
-          <article className="container-narrow pb-20 pt-12 sm:pb-24 sm:pt-16">
-            <header className="max-w-3xl">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
-                <p className="section-heading">/ devlog</p>
+          <article className="folio-container post-article">
+            <header className="post-header">
+              <div className="post-header__topline">
+                <p className="plate-label">Devlog · {post.metadata.date}</p>
                 <Link
                   to="/devlog"
-                  className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-accent hover:text-accent dark:border-zinc-700 dark:text-zinc-300"
+                  className="action-link"
                 >
                   <svg
                     width="14"
@@ -154,27 +138,24 @@ export default function DevlogPost() {
                   Back to devlogs
                 </Link>
               </div>
-              <p className="mt-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-lg">
+              <h1 className="post-description">
                 {post.metadata.description}
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3">
+              </h1>
+              <div className="post-meta">
                 <time
                   dateTime={post.metadata.date}
-                  className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500"
                 >
                   {post.metadata.date}
                 </time>
-                <ul className="flex flex-wrap gap-1.5">
+                <ul>
                   {post.metadata.tags.map((tag) => (
-                    <li key={tag} className="pill">
-                      {tag}
-                    </li>
+                    <li key={tag}>{tag}</li>
                   ))}
                 </ul>
               </div>
             </header>
 
-            <div className="mt-10 max-w-3xl border-t border-zinc-200 pt-10 dark:border-zinc-800">
+            <div className="post-prose">
               <Markdown
                 components={markdownComponents}
                 rehypePlugins={[

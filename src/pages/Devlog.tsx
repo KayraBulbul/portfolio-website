@@ -17,8 +17,19 @@ export default function Devlog() {
       }
     }
 
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsTagDropdownOpen(false);
+      }
+    }
+
     document.addEventListener("mousedown", handleMouseDown);
-    return () => document.removeEventListener("mousedown", handleMouseDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const allTags = Array.from(
@@ -67,32 +78,35 @@ export default function Devlog() {
   }
 
   return (
-    <section>
-      <div className="container-narrow py-20 sm:py-24">
-        <p className="section-heading mb-4">/ devlog</p>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          What I've been up to
-        </h1>
+    <section className="archive-page">
+      <div className="folio-container archive-layout">
+        <header className="archive-head">
+          <p className="plate-label">Devlog archive</p>
+          <h1>What I&apos;ve been up to</h1>
+          <p>Notes on projects, tools, coursework, and what I’m learning.</p>
+        </header>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto]">
-          <label className="sr-only" htmlFor="devlog-search">
-            Search devlogs by title
+        <div className="archive-filters">
+          <label className="filter-field" htmlFor="devlog-search">
+            <span>Search by title</span>
+            <input
+              id="devlog-search"
+              type="search"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="e.g. Learning Go"
+              className="text-input"
+            />
           </label>
-          <input
-            id="devlog-search"
-            type="search"
-            value={searchQuery}
-            onChange={(event) => setSearchQuery(event.target.value)}
-            placeholder="Search devlogs by title"
-            className="w-full rounded-md border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 transition-colors placeholder:text-zinc-400 focus:border-accent focus:outline-none dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100"
-          />
 
-          <div ref={dropdownRef} className="relative">
+          <div ref={dropdownRef} className="tag-filter">
+            <span className="filter-label">Filter by tags</span>
             <button
               type="button"
               onClick={() => setIsTagDropdownOpen((isOpen) => !isOpen)}
-              className="inline-flex w-full items-center justify-between gap-3 rounded-md border border-zinc-300 px-4 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-accent hover:text-accent dark:border-zinc-700 dark:text-zinc-300 sm:w-44"
+              className="filter-button"
               aria-expanded={isTagDropdownOpen}
+              aria-controls="tag-filter-panel"
             >
               {tagButtonText}
               <svg
@@ -104,7 +118,7 @@ export default function Devlog() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className={`transition-transform ${isTagDropdownOpen ? "rotate-180" : ""}`}
+                className={isTagDropdownOpen ? "filter-chevron is-open" : "filter-chevron"}
                 aria-hidden
               >
                 <path d="m6 9 6 6 6-6" />
@@ -112,23 +126,23 @@ export default function Devlog() {
             </button>
 
             {isTagDropdownOpen && (
-              <div className="absolute right-0 z-20 mt-2 w-full overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-900 sm:w-96">
-                <div className="p-4">
-                  <label className="sr-only" htmlFor="tag-search">
-                    Search tags
+              <div id="tag-filter-panel" className="tag-panel">
+                <div className="tag-panel__body">
+                  <label className="filter-field" htmlFor="tag-search">
+                    <span>Search tags</span>
+                    <input
+                      id="tag-search"
+                      type="search"
+                      value={tagSearchQuery}
+                      onChange={(event) => setTagSearchQuery(event.target.value)}
+                      placeholder="e.g. Go"
+                      className="text-input text-input--compact"
+                    />
                   </label>
-                  <input
-                    id="tag-search"
-                    type="search"
-                    value={tagSearchQuery}
-                    onChange={(event) => setTagSearchQuery(event.target.value)}
-                    placeholder="Search tags"
-                    className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-900 transition-colors placeholder:text-zinc-400 focus:border-accent focus:outline-none dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100"
-                  />
 
-                  <div className="mt-4 max-h-48 overflow-y-auto pr-1">
+                  <div className="tag-options">
                     {visibleTags.length > 0 ? (
-                      <ul className="flex flex-wrap gap-2">
+                      <ul>
                         {visibleTags.map((tag) => {
                           const isSelected = selectedTags.includes(tag);
 
@@ -137,12 +151,12 @@ export default function Devlog() {
                               <button
                                 type="button"
                                 onClick={() => toggleTag(tag)}
-                                className={
-                                  isSelected
-                                    ? "rounded-full border border-accent bg-accent px-2.5 py-1 text-xs font-mono text-white"
-                                    : "rounded-full border border-zinc-300 px-2.5 py-1 text-xs font-mono text-zinc-700 transition-colors hover:border-accent hover:text-accent dark:border-zinc-700 dark:text-zinc-300"
-                                }
+                                className={isSelected ? "tag-option is-selected" : "tag-option"}
+                                aria-pressed={isSelected}
+                                aria-label={`${isSelected ? "Remove" : "Add"} ${tag} filter`}
+                                data-tag={tag}
                               >
+                                <span aria-hidden>{isSelected ? "✓" : "+"}</span>
                                 {tag}
                               </button>
                             </li>
@@ -150,21 +164,19 @@ export default function Devlog() {
                         })}
                       </ul>
                     ) : (
-                      <p className="px-2 py-4 text-sm text-zinc-500">
-                        No tags found.
-                      </p>
+                      <p className="tag-empty">No tags found.</p>
                     )}
                   </div>
                 </div>
 
-                <div className="flex justify-end border-t border-zinc-200 px-4 py-3 dark:border-zinc-800">
+                <div className="tag-panel__footer">
                   <button
                     type="button"
                     onClick={resetTags}
                     disabled={!canResetTags}
-                    className="text-sm text-zinc-500 transition-colors hover:text-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:text-zinc-500"
+                    className="reset-button"
                   >
-                    Reset
+                    Reset filters
                   </button>
                 </div>
               </div>
@@ -172,20 +184,22 @@ export default function Devlog() {
           </div>
         </div>
 
+        <p className="archive-count" aria-live="polite">
+          {filteredPosts.length} {filteredPosts.length === 1 ? "entry" : "entries"}
+        </p>
+
         {filteredPosts.length > 0 ? (
-          <ul className="mt-10 divide-y divide-zinc-200 border-y border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
-            {filteredPosts.map((p) => (
-              <li key={p.slug}>
-                <DevlogCard slug={p.slug} metadata={p.metadata} />
+          <ul className="archive-list">
+            {filteredPosts.map((post) => (
+              <li key={post.slug}>
+                <DevlogCard slug={post.slug} metadata={post.metadata} />
               </li>
             ))}
           </ul>
         ) : (
-          <div className="mt-10 border-y border-zinc-200 py-10 dark:border-zinc-800">
-            <p className="font-medium">No devlogs found.</p>
-            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              Try a different title search or reset your tag filters.
-            </p>
+          <div className="archive-empty">
+            <p>No devlogs found.</p>
+            <p>Try a different title search or reset your tag filters.</p>
           </div>
         )}
       </div>
