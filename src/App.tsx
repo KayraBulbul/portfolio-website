@@ -12,17 +12,21 @@ function ScrollManager() {
 
   useEffect(() => {
     window.requestAnimationFrame(() => {
+      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth";
+
       if (hash) {
         const target = document.getElementById(hash.slice(1));
 
         if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          target.scrollIntoView({ behavior, block: "start" });
         }
 
         return;
       }
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior });
     });
   }, [pathname, hash]);
 
@@ -31,10 +35,10 @@ function ScrollManager() {
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="site-shell">
       <ScrollManager />
       <Navbar />
-      <main className="flex-1">
+      <main className="site-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/devlog" element={<Devlog />} />

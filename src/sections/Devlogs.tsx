@@ -24,48 +24,28 @@ export default function Devlogs() {
   const posts = getAllPosts().slice(0, 4);
 
   return (
-    <section
-      id="devlogs"
-      className="border-b border-zinc-200 dark:border-zinc-800"
-    >
-      <div className="container-narrow py-20 sm:py-24">
-        <p className="section-heading mb-4">/ devlogs</p>
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Latest devlogs
-          </h2>
-          <Link
-            to="/devlog"
-            className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-4 py-2.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent dark:border-zinc-700"
-          >
+    <section id="devlogs" className="folio-section devlogs-section">
+      <div className="folio-container">
+        <header className="section-head section-head--ruled">
+          <h2>Latest devlogs</h2>
+          <Link to="/devlog" className="action-link">
             View all devlogs
             <ArrowIcon />
           </Link>
-        </div>
+        </header>
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+        <ul className="devlog-preview-list">
           {posts.map((post) => (
             <li key={post.slug}>
-              <Link
-                to={`/devlog/${post.slug}`}
-                className="card group flex h-full flex-col"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-lg font-semibold tracking-tight transition-colors group-hover:text-accent">
-                    {post.metadata.title}
-                  </h3>
-                  <time className="mt-1 shrink-0 font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
-                    {post.metadata.date}
-                  </time>
+              <Link to={`/devlog/${post.slug}`} className="devlog-preview-row">
+                <time dateTime={post.metadata.date}>{post.metadata.date}</time>
+                <div>
+                  <h3>{post.metadata.title}</h3>
+                  <p>{post.metadata.description}</p>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {post.metadata.description}
-                </p>
-                <ul className="mt-5 flex flex-wrap gap-1.5">
+                <ul aria-label={`${post.metadata.title} tags`}>
                   {post.metadata.tags.map((tag) => (
-                    <li key={tag} className="pill">
-                      {tag}
-                    </li>
+                    <li key={tag}>{tag}</li>
                   ))}
                 </ul>
               </Link>

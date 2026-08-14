@@ -1,6 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
-  <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
-        font-family="JetBrains Mono, monospace" font-size="28" font-weight="700"
-        fill="#dc2626">K</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+  <title>Kayra Bulbul monogram</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --color-paper: oklch(93% 0.02 70);
+      --color-ink: oklch(17% 0.024 32);
+      --color-accent: oklch(43% 0.17 50);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-paper: oklch(16% 0.006 60);
+        --color-ink: oklch(95% 0.01 60);
+        --color-accent: oklch(72% 0.16 60);
+      }
+    }
+  </style>
+  <rect width="64" height="64" fill="var(--color-paper)" />
+  <path d="M10 8h11v48H10z" fill="var(--color-ink)" />
+  <path d="m19 31 22-23h14L27 37z" fill="var(--color-accent)" />
+  <path d="m20 30 35 26H39L15 36z" fill="var(--color-ink)" />
 </svg>

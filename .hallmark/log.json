@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-08-14",
+    "scope": "app",
+    "macrostructure": "Type Specimen adapted as an Engineering Folio",
+    "theme": "studied Press 01 DNA with charcoal dark surfaces and orange signal accent",
+    "enrichment": "none",
+    "brief": "Restored desktop hero breathing room, replaced the responsive Index label with an accessible self-closing hamburger disclosure, and neutralized the dark palette into charcoal grey.",
+    "navigation": "N3 side rail with viewport reading-line tracking and hamburger disclosure below the desktop breakpoint",
+    "footer": "Ft1 mast-headed colophon"
+  },
+  {
+    "date": "2026-08-14",
+    "scope": "app",
+    "macrostructure": "Type Specimen adapted as an Engineering Folio",
+    "theme": "studied Press 01 DNA with orange signal accent",
+    "enrichment": "none",
+    "brief": "Tightened hero composition, removed redundant location and section metadata, and normalized featured-project title alignment.",
+    "navigation": "N3 side rail with viewport reading-line tracking and icon-only theme control",
+    "footer": "Ft1 mast-headed colophon"
+  },
+  {
+    "date": "2026-08-14",
+    "scope": "app",
+    "macrostructure": "Type Specimen adapted as an Engineering Folio",
+    "theme": "studied Press 01 DNA with orange signal accent",
+    "enrichment": "none",
+    "brief": "Refined software-engineering focus, viewport-aware rail navigation, repaired contact typography, balanced long-form devlogs, and a system-native K monogram.",
+    "navigation": "N3 side rail with viewport reading-line tracking and indexed mobile disclosure",
+    "footer": "Ft1 mast-headed colophon"
+  },
+  {
+    "date": "2026-08-14",
+    "scope": "app",
+    "macrostructure": "Type Specimen adapted as an Engineering Folio",
+    "theme": "studied Press 01 DNA with orange signal accent",
+    "enrichment": "none",
+    "brief": "Typography-first software engineering portfolio with ruled ledgers, proof surfaces, recruiter-scannable project and education facts, and responsive indexed navigation.",
+    "navigation": "N3 side rail adapted for desktop with indexed mobile disclosure",
+    "footer": "Ft1 mast-headed colophon"
+  }
+]

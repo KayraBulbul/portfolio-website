@@ -74,62 +74,55 @@ function ExternalIcon() {
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="border-b border-zinc-200 dark:border-zinc-800"
-    >
-      <div className="container-narrow py-20 sm:py-24">
-        <p className="section-heading mb-4">/ projects</p>
-        <div className="flex items-end justify-between flex-wrap gap-4">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            Selected work
-          </h2>
+    <section id="projects" className="folio-section project-section">
+      <div className="folio-container">
+        <header className="section-head section-head--ruled">
+          <h2>Selected work</h2>
           <a
             href="https://github.com/KayraBulbul"
             target="_blank"
             rel="noreferrer"
-            className="link-underline text-sm text-zinc-600 dark:text-zinc-400"
+            className="action-link"
           >
             All repos on GitHub <ExternalIcon />
           </a>
-        </div>
+        </header>
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2">
-          {projects.map((p) => (
-            <li key={p.title}>
+        <ol className="project-ledger">
+          {projects.map((project, index) => (
+            <li
+              key={project.title}
+              className={
+                project.highlight ? "project-item project-item--featured" : "project-item"
+              }
+            >
               <a
-                href={p.repo}
+                href={project.repo}
                 target="_blank"
                 rel="noreferrer"
-                className="card group flex h-full flex-col"
+                className="project-entry"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-lg font-semibold tracking-tight">
-                    {p.title}
-                    {p.highlight && (
-                      <span className="ml-2 align-middle text-[10px] font-mono uppercase tracking-[0.15em] text-accent">
-                        featured
-                      </span>
-                    )}
-                  </h3>
-                  <span className="mt-1 text-zinc-400 transition-colors group-hover:text-accent">
-                    <ExternalIcon />
-                  </span>
+                <div className="project-entry__index">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {project.highlight && <span>Featured</span>}
                 </div>
-                <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  {p.description}
-                </p>
-                <ul className="mt-5 flex flex-wrap gap-1.5">
-                  {p.stack.map((s) => (
-                    <li key={s} className="pill">
-                      {s}
-                    </li>
+                <h3>{project.title}</h3>
+                <p className="project-entry__description">{project.description}</p>
+                <ul
+                  className="project-entry__stack"
+                  aria-label={`${project.title} technologies`}
+                >
+                  {project.stack.map((technology) => (
+                    <li key={technology}>{technology}</li>
                   ))}
                 </ul>
+                <span className="project-entry__link">
+                  View project <ExternalIcon />
+                </span>
               </a>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </section>
   );

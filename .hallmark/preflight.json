@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-14",
+  "scope": "app",
+  "designSystem": "design.md",
+  "tokenSource": "tokens.css",
+  "fonts": {
+    "display": "Bricolage Grotesque",
+    "body": "Fraunces",
+    "mono": "JetBrains Mono"
+  },
+  "palette": "dual-mode warm paper and charcoal with one orange accent",
+  "spacing": "4pt-derived editorial scale",
+  "motion": "motion-cut; direct interaction feedback only",
+  "framework": "React 18, TypeScript, Vite, Tailwind CSS 3",
+  "preservation": [
+    "routes",
+    "content",
+    "theme persistence",
+    "devlog search and tag filters",
+    "Markdown rendering"
+  ]
+}
