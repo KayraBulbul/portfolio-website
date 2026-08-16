@@ -35,7 +35,6 @@ export default function Skills() {
       <div className="folio-container">
         <header className="section-head section-head--compact">
           <h2>What I work with</h2>
-          <p>A technical index, grouped by the work each tool supports.</p>
         </header>
 
         <dl className="skills-ledger">

@@ -453,7 +453,6 @@
   color: var(--color-paper);
 }
 
-.folio-section--proof .section-head > p,
 .folio-section--proof .about-copy,
 .folio-section--proof .credential-ledger dd,
 .folio-section--proof .skills-ledger dd {
@@ -486,12 +485,6 @@
   line-height: var(--leading-heading);
   min-width: 0;
   overflow-wrap: anywhere;
-}
-
-.section-head > p,
-.section-head--compact > p {
-  max-width: 45ch;
-  color: var(--color-muted);
 }
 
 .section-head--ruled {
@@ -1132,12 +1125,6 @@
   overflow-wrap: anywhere;
 }
 
-.footer-tagline {
-  max-width: 45ch;
-  color: var(--color-paper-2);
-  font-size: var(--text-md);
-}
-
 .footer-links {
   border-block-start: var(--rule-hair) solid var(--color-neutral);
 }
@@ -1300,7 +1287,6 @@
     grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.5fr);
   }
 
-  .footer-tagline,
   .footer-links {
     align-self: end;
   }
