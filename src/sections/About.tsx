@@ -4,7 +4,6 @@ export default function About() {
       <div className="folio-container">
         <header className="section-head section-head--compact">
           <h2>A bit about me</h2>
-          <p>Profile, education, and current engineering focus.</p>
         </header>
 
         <div className="about-layout">

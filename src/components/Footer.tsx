@@ -12,10 +12,6 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="folio-container footer-grid">
         <p className="footer-wordmark">Kayra Bulbul</p>
-        <p className="footer-tagline">
-          Computer Science student at RMIT University. Backend, infrastructure, and
-          systems.
-        </p>
         <ul className="footer-links" aria-label="Social links">
           {socials.map((social) => (
             <li key={social.label}>
