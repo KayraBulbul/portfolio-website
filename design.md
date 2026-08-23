@@ -104,9 +104,9 @@ Canonical values are emitted in `tokens.css`; this section remains the human-rea
 
 ## Portfolio information architecture
 
-- Preserve `/`, `/devlog`, and `/devlog/:slug`, plus all current home-page anchors and theme behavior.
+- Preserve `/`, `/projects`, `/projects/:slug`, `/devlog`, and `/devlog/:slug`, plus all current home-page anchors and theme behavior.
 - Home remains Hero · About · Projects · Skills · Devlogs · Contact. Do not reorder or rename content without approval.
-- Projects · treat featured work as editorial proof sheets and the remaining work as a ruled ledger. Always expose title, purpose, stack, and repository link without hover.
+- Projects · treat featured work as editorial proof sheets and the remaining work as a ruled ledger. Always expose title, purpose, stack, and repository link without hover. Keep the searchable, technology-filterable project archive and Markdown detail routes. Project detail pages may contain responsive screenshots, GIFs, and YouTube demonstrations.
 - Experience · when present, use chronological ledger rows: dates, organisation, role, and concise outcomes. Do not invent employment history.
 - Skills · use a compact, grouped technical index or spec sheet; categories and keywords must scan faster than prose.
 - Devlogs · use dated index rows and preserve search, tag filtering, article routes, and Markdown behavior.

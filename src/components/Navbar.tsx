@@ -64,6 +64,10 @@ export default function Navbar() {
       return targetHash === "devlogs";
     }
 
+    if (pathname.startsWith("/projects")) {
+      return targetHash === "projects";
+    }
+
     return pathname === "/" && targetHash === activeSection;
   };
 
