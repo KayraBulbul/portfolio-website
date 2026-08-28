@@ -5,5 +5,5 @@ technologies: Python, Tkinter, Graph Search
 repositoryUrl: https://github.com/KayraBulbul/maze-solver
 featured: false
 published: true
-order: 4
+order: 5
 ---

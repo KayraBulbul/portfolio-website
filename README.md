@@ -16,6 +16,7 @@ repositoryUrl: https://github.com/username/project
 liveUrl: https://example.com
 status: Active
 featured: false
+homepage: true
 published: true
 order: 7
 ---
@@ -25,8 +26,10 @@ order: 7
 Write the full project description here.
 ```
 
-`repositoryUrl`, `liveUrl`, and `status` are optional. Set `published` to
-`false` to keep a draft out of the site. Lower `order` values appear first.
+`repositoryUrl`, `liveUrl`, and `status` are optional. Set `homepage` to
+`false` to keep a published project off the homepage, or set `published` to
+`false` to keep a draft out of the site. The homepage shows the first six
+eligible projects. Lower `order` values appear first.
 
 Put screenshots and GIFs in `public/projects`, then add them with normal
 Markdown image syntax. The optional quoted title becomes the visible caption:

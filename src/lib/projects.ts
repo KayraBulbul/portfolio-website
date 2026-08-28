@@ -12,6 +12,7 @@ export type ProjectMetadata = {
   liveUrl?: string;
   status?: string;
   featured: boolean;
+  homepage: boolean;
   published: boolean;
   order: number;
 };
@@ -74,6 +75,7 @@ function parseProject(path: string, rawMarkdown: string): Project {
       liveUrl: optionalValue(metadataObject.liveUrl),
       status: optionalValue(metadataObject.status),
       featured: metadataObject.featured === "true",
+      homepage: metadataObject.homepage !== "false",
       published: metadataObject.published === "true",
       order: Number.parseInt(metadataObject.order, 10) || Number.MAX_SAFE_INTEGER,
     },
@@ -88,6 +90,10 @@ const projects = Object.entries(allProjectFiles)
 
 export function getAllProjects() {
   return projects;
+}
+
+export function getHomepageProjects() {
+  return projects.filter((project) => project.metadata.homepage).slice(0, 6);
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {

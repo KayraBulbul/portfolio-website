@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { getAllProjects } from "../lib/projects";
+import { getHomepageProjects } from "../lib/projects";
 
 function ExternalIcon() {
   return (
@@ -40,7 +40,7 @@ function ArrowIcon() {
 }
 
 export default function Projects() {
-  const projects = getAllProjects();
+  const projects = getHomepageProjects();
 
   return (
     <section id="projects" className="folio-section project-section">

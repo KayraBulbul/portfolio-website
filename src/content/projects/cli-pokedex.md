@@ -5,5 +5,5 @@ technologies: TypeScript, Node.js, PokeAPI
 repositoryUrl: https://github.com/KayraBulbul/cli-pokedex
 featured: false
 published: true
-order: 6
+order: 7
 ---

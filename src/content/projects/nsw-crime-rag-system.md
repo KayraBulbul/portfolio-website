@@ -5,5 +5,5 @@ technologies: Python, LangChain, ChromaDB, Ollama, RAG
 repositoryUrl: https://github.com/KayraBulbul/NSW-Crime-RAG-System
 featured: true
 published: true
-order: 2
+order: 3
 ---
