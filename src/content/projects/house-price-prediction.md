@@ -4,6 +4,7 @@ description: Regression pipeline on Melbourne housing data. Feature engineering,
 technologies: Python, Pandas, scikit-learn, Jupyter
 repositoryUrl: https://github.com/KayraBulbul/house-price-prediction
 featured: false
+homepage: false
 published: true
 order: 4
 ---

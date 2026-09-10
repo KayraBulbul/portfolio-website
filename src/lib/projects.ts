@@ -86,7 +86,12 @@ function parseProject(path: string, rawMarkdown: string): Project {
 const projects = Object.entries(allProjectFiles)
   .map(([path, rawMarkdown]) => parseProject(path, rawMarkdown))
   .filter((project) => project.metadata.published)
-  .sort((a, b) => a.metadata.order - b.metadata.order);
+  .sort((a, b) => {
+    if (a.metadata.featured !== b.metadata.featured) {
+      return a.metadata.featured ? -1 : 1;
+    }
+    return a.metadata.order - b.metadata.order;
+  });
 
 export function getAllProjects() {
   return projects;

@@ -25,7 +25,8 @@ Write the full project description here.
 `repositoryUrl`, `liveUrl`, and `status` are optional. Set `homepage` to
 `false` to keep a published project off the homepage, or set `published` to
 `false` to keep a draft out of the site. The homepage shows the first six
-eligible projects. Lower `order` values appear first.
+eligible projects. Featured projects appear first on both the homepage and the
+archive. Within each group, lower `order` values appear first.
 
 Put screenshots and GIFs in `public/projects`, then add them with normal
 Markdown image syntax. The optional quoted title becomes the visible caption:
