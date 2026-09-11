@@ -76,12 +76,6 @@ export default function ProjectDetail() {
 
         <div className="project-detail-grid">
           <dl className="project-facts">
-            {metadata.status && (
-              <div>
-                <dt>Status</dt>
-                <dd>{metadata.status}</dd>
-              </div>
-            )}
             <div>
               <dt>Technologies</dt>
               <dd>{metadata.technologies.join(" / ")}</dd>
