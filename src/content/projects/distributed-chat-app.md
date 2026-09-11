@@ -1,9 +1,9 @@
 ---
 title: Distributed Chat App
-description: Real-time chat across multiple Go servers. Redis Pub/Sub broadcasts messages between servers, Caddy balances WebSocket connections, and clients reconnect after a server goes down.
-technologies: Go, TypeScript, React, Redis, PostgreSQL, Docker, Caddy
+description: Real-time chat across multiple Go servers, with Redis Pub/Sub, automatic reconnection, Prometheus and Grafana monitoring, and a Go load tester.
+technologies: Go, TypeScript, React, Redis, PostgreSQL, Docker, Caddy, Prometheus, Grafana
 repositoryUrl: https://github.com/KayraBulbul/distributed-chat-app
-status: In progress
+status: Completed
 featured: true
 homepage: true
 published: true
@@ -12,7 +12,7 @@ order: 4
 
 ## What I built
 
-A chat app built to learn how WebSockets, load balancing, and Pub/Sub work together. A React and TypeScript client connects to Go servers through Caddy, with Redis carrying messages between servers and PostgreSQL storing users and messages.
+A completed learning project exploring how WebSockets, load balancing, and Pub/Sub work together. A React and TypeScript client connects to Go servers through Caddy, with Redis carrying messages between servers and PostgreSQL storing users and messages.
 
 ## How it works
 
@@ -22,6 +22,12 @@ Caddy distributes new WebSocket connections across three Go servers. Each server
 
 When a connection closes, the client retries through Caddy using the same user ID. Retries use an increasing delay with random jitter, and Caddy can route the new connection to another server. If every server is down, the client keeps retrying until a connection succeeds. The chat shows live messages without replaying messages missed while disconnected.
 
-## What I am working on next
+## Monitoring
 
-Prometheus and Grafana monitoring, alongside a load tester, to track connections per server and measure how clients reconnect when a server goes down.
+Each Go server exposes Prometheus metrics for active WebSocket connections, messages received from clients, and messages successfully published to Redis. Prometheus scrapes all three servers, and Grafana lets me view those metrics and watch how connections redistribute after a server goes down. The Docker Compose stack also includes Node Exporter for system metrics.
+
+## Load testing
+
+I built a Go traffic generator that creates users, opens WebSocket connections through Caddy, sends messages, and reads broadcasts. User count, message interval, ramp-up time, and run duration are configurable. It reports connections, sends, received broadcasts, reconnects, and errors.
+
+Stopping a server while the tester runs exercises reconnection through Caddy using the same user IDs, with exponential backoff and jitter. Existing connections stay where they are when the server returns. The tester generates traffic and exercises failure recovery; it does not verify delivery correctness or measure latency.
