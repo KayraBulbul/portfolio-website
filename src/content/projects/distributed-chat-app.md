@@ -18,6 +18,8 @@ A completed learning project exploring how WebSockets, load balancing, and Pub/S
 
 Caddy distributes new WebSocket connections across three Go servers. Each server manages its own connected clients and subscribes to a shared Redis channel. Incoming chat messages are saved to PostgreSQL and published to Redis, so users can receive messages from people connected to other servers.
 
+![Four chat clients exchanging messages](/projects/distributed-chat-clients.png "Four clients chatting across the system")
+
 ## Reconnecting after a failure
 
 When a connection closes, the client retries through Caddy using the same user ID. Retries use an increasing delay with random jitter, and Caddy can route the new connection to another server. If every server is down, the client keeps retrying until a connection succeeds. The chat shows live messages without replaying messages missed while disconnected.
@@ -25,6 +27,8 @@ When a connection closes, the client retries through Caddy using the same user I
 ## Monitoring
 
 Each Go server exposes Prometheus metrics for active WebSocket connections, messages received from clients, and messages successfully published to Redis. Prometheus scrapes all three servers, and Grafana lets me view those metrics and watch how connections redistribute after a server goes down. The Docker Compose stack also includes Node Exporter for system metrics.
+
+![Monitoring dashboard showing server activity](/projects/distributed-chat-dashboard.png "Monitoring dashboard")
 
 ## Load testing
 
