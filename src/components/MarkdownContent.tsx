@@ -67,11 +67,11 @@ function normalizeStandaloneYouTubeLinks(content: string) {
 
 function YouTubeEmbed({ src }: { src: string }) {
   return (
-    <figure className="project-media project-media--video">
-      <div className="project-video-frame">
+    <figure className="prose-figure prose-figure--video">
+      <div className="prose-video">
         <iframe
           src={src}
-          title="YouTube project demonstration"
+          title="Embedded YouTube video"
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
@@ -107,7 +107,7 @@ const markdownComponents: Components = {
 
       if (src) {
         return (
-          <figure className="project-media">
+          <figure className="prose-figure">
             <img src={src} alt={alt} loading="lazy" />
             {caption && <figcaption>{caption}</figcaption>}
           </figure>
@@ -159,7 +159,7 @@ const markdownComponents: Components = {
   },
 };
 
-export default function ProjectMarkdown({ content }: { content: string }) {
+export default function MarkdownContent({ content }: { content: string }) {
   return (
     <Markdown
       components={markdownComponents}

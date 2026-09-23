@@ -3,7 +3,6 @@ title: Distributed Chat App
 description: Real-time chat across multiple Go servers, with Redis Pub/Sub, automatic reconnection, Prometheus and Grafana monitoring, and a Go load tester.
 technologies: Go, TypeScript, React, Redis, PostgreSQL, Docker, Caddy, Prometheus, Grafana
 repositoryUrl: https://github.com/KayraBulbul/distributed-chat-app
-status: Completed
 featured: true
 homepage: true
 published: true

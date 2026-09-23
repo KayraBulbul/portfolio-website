@@ -10,7 +10,6 @@ description: A short archive and page-header description.
 technologies: TypeScript, React, PostgreSQL
 repositoryUrl: https://github.com/username/project
 liveUrl: https://example.com
-status: Active
 featured: false
 homepage: true
 published: true
@@ -22,7 +21,7 @@ order: 7
 Write the full project description here.
 ```
 
-`repositoryUrl`, `liveUrl`, and `status` are optional. Set `homepage` to
+`repositoryUrl` and `liveUrl` are optional. Set `homepage` to
 `false` to keep a published project off the homepage, or set `published` to
 `false` to keep a draft out of the site. The homepage shows the first six
 eligible projects. Featured projects appear first on both the homepage and the

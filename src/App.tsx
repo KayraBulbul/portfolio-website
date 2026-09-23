@@ -8,6 +8,7 @@ import Devlog from "./pages/Devlog";
 import DevlogPost from "./pages/DevlogPost";
 import ProjectArchive from "./pages/ProjectArchive";
 import ProjectDetail from "./pages/ProjectDetail";
+import NotFound from "./pages/NotFound";
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="/devlog/:slug" element={<DevlogPost />} />
           <Route path="/projects" element={<ProjectArchive />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

@@ -4,7 +4,6 @@ description: Winner of Melbourne Hack 2026. Legible is an accessibility layer th
 technologies: TypeScript, React, FastAPI, PostgreSQL, Gemini
 repositoryUrl: https://github.com/KayraBulbul/hackmelbourne2026
 liveUrl: https://hackmelbourne2026.vercel.app/
-status: Hackathon project
 featured: true
 published: true
 order: 1

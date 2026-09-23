@@ -10,7 +10,6 @@ export type ProjectMetadata = {
   technologies: string[];
   repositoryUrl?: string;
   liveUrl?: string;
-  status?: string;
   featured: boolean;
   homepage: boolean;
   published: boolean;
@@ -73,7 +72,6 @@ function parseProject(path: string, rawMarkdown: string): Project {
       technologies,
       repositoryUrl: optionalValue(metadataObject.repositoryUrl),
       liveUrl: optionalValue(metadataObject.liveUrl),
-      status: optionalValue(metadataObject.status),
       featured: metadataObject.featured === "true",
       homepage: metadataObject.homepage !== "false",
       published: metadataObject.published === "true",
