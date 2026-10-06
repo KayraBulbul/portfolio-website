@@ -4,6 +4,7 @@ description: Visual pathfinding playground. Generates mazes and animates DFS-bas
 technologies: Python, Tkinter, Graph Search
 repositoryUrl: https://github.com/KayraBulbul/maze-solver
 featured: false
+homepage: false
 published: true
 order: 5
 ---

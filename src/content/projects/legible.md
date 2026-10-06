@@ -6,7 +6,7 @@ repositoryUrl: https://github.com/KayraBulbul/hackmelbourne2026
 liveUrl: https://hackmelbourne2026.vercel.app/
 featured: true
 published: true
-order: 1
+order: 2
 ---
 
 ## What I built
